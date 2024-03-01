@@ -1,6 +1,6 @@
 {
   "name": "notes",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Notes for anything and everything that I do.",
   "type": "commonjs",
   "scripts": {
