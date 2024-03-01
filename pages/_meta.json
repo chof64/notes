@@ -1,5 +1,6 @@
 {
   "index": "Home",
+  "disclosure": "Disclosure",
   "about": {
     "title": "About",
     "type": "page"
