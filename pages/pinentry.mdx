@@ -1,0 +1,41 @@
+---
+title: Pinentry-mac
+---
+
+import { Tabs } from "nextra/components";
+import { Callout } from "nextra/components";
+
+# Pinentry
+
+Pinentry allows VSCode and other GUI based application to prompt for password.
+
+## Install
+
+<Tabs items={["macOS", "Linux", "Windows"]}>
+  <Tabs.Tab>
+
+1. Install using Homebrew
+
+```zsh copy
+brew install pinentry-mac
+```
+
+2. Use pinentry-mac with GPG
+
+```zsh copy
+echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+killall gpg-agent
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+</Tabs>

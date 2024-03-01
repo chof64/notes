@@ -1,0 +1,116 @@
+---
+title: "GNU Privacy Guard"
+---
+
+import { Tabs } from "nextra/components";
+import { Callout } from "nextra/components";
+
+# GNU Privacy Guard
+
+GNU Privacy Guard (GnuPG or GPG) is a completely free implementation of PGP.
+It allows users to encrypt and sign data communications and features a versatile
+key management system.
+
+## Install
+
+<Tabs items={["macOS", "Linux", "Windows"]} >
+  <Tabs.Tab>
+
+1. Install using Homebrew
+
+```zsh copy
+brew install gnupg
+```
+
+2. Add GPG to `~/.zshrc`
+
+```zsh copy
+if [ -r ~/.zshrc ]; then echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zshrc; \
+else echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zprofile; fi
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab >
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+### Generate a new key
+
+1. Use the `--full-generate-key` flag to generate a new key.
+
+```zsh copy
+gpg --full-generate-key
+```
+
+2. Follow the prompt to generate a new key.
+
+3. Check the generated key
+
+### List all keys
+
+Public keys
+
+```zsh copy
+gpg --list-keys --keyid-format=long
+```
+
+Private keys
+
+```zsh copy
+gpg --list-secret-keys --keyid-format=long
+```
+
+- `--keyid-format=long` -- displays your key's id in long format.
+
+### Import gpg keys
+
+```zsh copy
+gpg --import [KEY-FILE]
+```
+
+<sup>*Importing public and private key file uses the same command.</sup>
+
+- Replace `[KEY-FILE]` with the path to your key file.
+
+### Export your gpg keys
+
+Public key
+
+```zsh copy
+gpg --export --armor [KEY-ID]
+```
+
+Private key
+
+```zsh copy
+gpg --export-secret-key --armor [KEY-ID]
+```
+
+- These will export and print your keys in the terminal.
+- You can use the redirector `>` operator to redirect the output to a file.
+
+## What is GPG
+
+GPG keys are broken down into two types: public and private.
+
+- **Public keys** are used to encrypt data and verify signatures.
+- **Private keys** are used to decrypt data and sign data.
+
+## Next Steps
+
+- [Pinentry-mac](/pinentry)
+
+## References
+
+- https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+- https://linuxhint.com/export-import-keys-with-gpg/
