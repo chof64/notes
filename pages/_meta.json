@@ -3,5 +3,8 @@
   "about": {
     "title": "About",
     "type": "page"
+  },
+  "miscellaneous": {
+    "title": "Miscellaneous"
   }
 }

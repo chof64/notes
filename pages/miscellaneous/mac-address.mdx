@@ -1,0 +1,64 @@
+---
+title: MAC Address
+---
+
+import { Tabs } from "nextra/components";
+import { Callout } from "nextra/components";
+
+# MAC Address
+
+MAC (Media Access Control) address is a string of 12 alphanumeric characters,
+such as `00:1A:2B:3C:4D:5E`. It is a unique identifier assigned to network
+interfaces for communications on the physical network segment. It is also known
+as a hardware address, physical address, or Ethernet address.
+
+## How to get MAC Address
+
+<Tabs items={["macOS", "Linux", "Windows"]} >
+  <Tabs.Tab>
+```zsh copy
+ifconfig en0 | grep ether
+```
+<ul >
+- `ifconfig{:zsh}` -- is used to view or change the configuration of network
+interfaces on your system.
+- `en0{:zsh}` -- refers to the physical network interface. The wifi network
+interface.
+</ul>
+  </Tabs.Tab>
+  <Tabs.Tab >
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+</Tabs>
+
+## How to change MAC Address
+
+<Tabs items={["macOS","Linux","Windows"]} >
+  <Tabs.Tab>
+    ```zsh copy
+    sudo ifconfig en0 lladdr [00:1A:2B:3C:4D:5E]
+    ```
+    <ul>
+      - `sudo{:zsh}` -- requires sudo to change the MAC address.
+      - This command also requires you to disconnect to any connected access
+      points, or else it will fail.
+    </ul>
+  </Tabs.Tab>
+  <Tabs.Tab >
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+  <Tabs.Tab >
+    <Callout type="warning" >
+      Work in progress
+    </Callout>
+  </Tabs.Tab>
+</Tabs>
