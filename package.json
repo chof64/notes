@@ -2,6 +2,7 @@
   "name": "notes",
   "version": "0.2.0",
   "description": "Notes for anything and everything that I do.",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -29,6 +30,8 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "release-it": "^17.1.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^4.9.3"
